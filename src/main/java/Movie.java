@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Movie {
     int id;
     String title;
@@ -8,6 +10,7 @@ public class Movie {
         if (!isEquals(title)) {
             throw new IllegalArgumentException("영화 제목이 올바르지 않습니다.");
         }
+
         return true;
     }
 
@@ -25,5 +28,21 @@ public class Movie {
         this.title = title;
         this.screeningPeriod = screeningPeriod;
         this.screeningTime = screeningTime;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == this) return true;
+        if (!(object instanceof Movie movie)) return false;
+
+        return id == movie.id
+            && title.equals(movie.title)
+            && screeningPeriod == movie.screeningPeriod
+            && screeningTime == movie.screeningTime;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, screeningPeriod, screeningTime);
     }
 }
