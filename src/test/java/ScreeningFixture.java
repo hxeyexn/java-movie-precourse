@@ -26,8 +26,23 @@ public class ScreeningFixture {
             )
         );
     }
+
+    public Screening getScreening3() {
+        return new Screening(
+            movieFixture.getMovie2(),
+            theaterFixture.getTheater2(),
+            new ScreeningTime(
+                LocalTime.of(10, 0),
+                LocalTime.of(12, 35)
+            )
+        );
+    }
     
     public List<Screening> getTwoScreenings() {
         return List.of(getScreening1(), getScreening2());
+    }
+
+    public List<Screening> getOverlapScreenings() {
+        return List.of(getScreening1(), getScreening3());
     }
 }

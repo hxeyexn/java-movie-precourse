@@ -34,4 +34,9 @@ public class Screening {
     public LocalTime getEndTime() {
         return time.end;
     }
+
+    public boolean overlapsWith(Screening screening) {
+        return this.getStartTime().isBefore(screening.getEndTime()) &&
+            this.getEndTime().isAfter(screening.getStartTime());
+    }
 }
