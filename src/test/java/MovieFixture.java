@@ -60,4 +60,11 @@ public class MovieFixture {
             getMovie4()
         );
     }
+
+    public List<Movie> getTwoMovies() {
+        return List.of(
+            getMovie1(),
+            getMovie2()
+        );
+    }
 }
