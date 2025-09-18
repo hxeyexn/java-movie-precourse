@@ -1,3 +1,5 @@
+package seat;
+
 import java.util.Objects;
 
 public class Seat {

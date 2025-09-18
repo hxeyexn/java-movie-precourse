@@ -1,3 +1,7 @@
+package seat;
+
+import screening.Screening;
+
 import java.util.ArrayList;
 import java.util.List;
 

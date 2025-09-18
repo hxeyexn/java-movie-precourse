@@ -1,3 +1,7 @@
+package screening;
+
+import movie.Movie;
+import theater.Theater;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;

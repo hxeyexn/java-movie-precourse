@@ -1,3 +1,5 @@
+package movie;
+
 import java.time.LocalDateTime;
 
 public class ScreeningPeriod {

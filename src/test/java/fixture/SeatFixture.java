@@ -1,3 +1,7 @@
+package fixture;
+
+import seat.Grade;
+import seat.Seat;
 import java.util.List;
 
 public class SeatFixture {

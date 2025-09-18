@@ -1,3 +1,7 @@
+package fixture;
+
+import movie.Movie;
+import movie.ScreeningPeriod;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;

@@ -1,5 +1,11 @@
+package screening;
+
+import fixture.MovieFixture;
+import fixture.TheaterFixture;
+import movie.Movie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import theater.Theater;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.List;

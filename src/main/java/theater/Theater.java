@@ -1,3 +1,7 @@
+package theater;
+
+import seat.Seats;
+
 import java.time.LocalTime;
 
 public class Theater {

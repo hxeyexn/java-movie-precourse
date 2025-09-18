@@ -1,3 +1,8 @@
+package fixture;
+
+import seat.Seats;
+import theater.OperatingHours;
+import theater.Theater;
 import java.time.LocalTime;
 import java.util.List;
 

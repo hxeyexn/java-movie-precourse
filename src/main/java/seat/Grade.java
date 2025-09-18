@@ -1,3 +1,5 @@
+package seat;
+
 public enum Grade {
     S(15_000),
     A(12_000),

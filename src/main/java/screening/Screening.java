@@ -1,3 +1,8 @@
+package screening;
+
+import movie.Movie;
+import theater.Theater;
+
 import java.time.LocalTime;
 
 public class Screening {

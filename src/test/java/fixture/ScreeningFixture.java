@@ -1,3 +1,7 @@
+package fixture;
+
+import screening.Screening;
+import screening.ScreeningTime;
 import java.time.LocalTime;
 import java.util.List;
 
