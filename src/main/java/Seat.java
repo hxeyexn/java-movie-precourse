@@ -22,6 +22,10 @@ public class Seat {
         return row + Integer.toString(column);
     }
 
+    public boolean isAvailable() {
+        return !isReversed;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (object == this) return true;

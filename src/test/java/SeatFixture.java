@@ -17,4 +17,18 @@ public class SeatFixture {
 
         );
     }
+
+    public List<Seat> getAvailableSeats() {
+        return List.of(
+            new Seat('A', 1, Grade.S, false),
+            new Seat('A', 2, Grade.S, false)
+        );
+    }
+
+    public List<Seat> getUnavailableSeats() {
+        return List.of(
+            new Seat('A', 1, Grade.S, false),
+            new Seat('A', 2, Grade.S, true)
+        );
+    }
 }
