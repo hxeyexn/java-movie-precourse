@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Reservation {
-    SelectedMovies selectedMovies = new SelectedMovies();
-    SelectedScreenings selectedScreenings = new SelectedScreenings();
-    List<SelectedSeats> selectedSeats = new ArrayList<>();
+    private SelectedMovies selectedMovies = new SelectedMovies();
+    private SelectedScreenings selectedScreenings = new SelectedScreenings();
+    private List<SelectedSeats> selectedSeats = new ArrayList<>();
     private int price = 0;
 
     public void selectMovies(

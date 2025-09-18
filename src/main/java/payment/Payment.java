@@ -18,9 +18,30 @@ public class Payment {
         this.user = user;
     }
 
-    public void pay(Reservation reservation, Screening screening) {
+    public void pay(
+        Reservation reservation,
+        Screening screening,
+        int pointAmount
+    ) {
+        applyMovieDiscount(reservation, screening);
+        applyPoint(reservation, pointAmount);
+    }
+
+    private void applyMovieDiscount(
+        Reservation reservation,
+        Screening screening
+    ) {
         for (DiscountPolicy policy : policies) {
             policy.discount(reservation, screening);
         }
+    }
+
+    private void applyPoint(
+        Reservation reservation,
+        int pointAmount
+    ) {
+        user.usePoint(pointAmount);
+        int newPrice = reservation.getPrice() - pointAmount;
+        reservation.setPrice(newPrice);
     }
 }
