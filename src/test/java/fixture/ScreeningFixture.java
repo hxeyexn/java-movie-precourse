@@ -47,8 +47,8 @@ public class ScreeningFixture {
             movieFixture.getMovie2(),
             theaterFixture.getTheater2(),
             new ScreeningTime(
-                    LocalDateTime.of(2025, 1, 10, 10, 0),
-                    LocalDateTime.of(2025, 1, 10, 12, 35)
+                LocalDateTime.of(2025, 1, 10, 12, 0),
+                LocalDateTime.of(2025, 1, 10, 14, 35)
             )
         );
     }
