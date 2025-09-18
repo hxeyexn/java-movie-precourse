@@ -1,14 +1,14 @@
 package theater;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class OperatingHours {
-    LocalTime open;
-    LocalTime close;
+    LocalDateTime open;
+    LocalDateTime close;
 
     public OperatingHours(
-        LocalTime open,
-        LocalTime close
+        LocalDateTime open,
+        LocalDateTime close
     ) {
         this.open = open;
         this.close = close;

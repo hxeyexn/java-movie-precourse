@@ -2,7 +2,7 @@ package theater;
 
 import seat.Seats;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class Theater {
     private final long id;
@@ -26,11 +26,11 @@ public class Theater {
         return name;
     }
 
-    public LocalTime getOpenTime() {
+    public LocalDateTime getOpenTime() {
         return operatingHours.open;
     }
 
-    public LocalTime getCloseTime() {
+    public LocalDateTime getCloseTime() {
         return operatingHours.close;
     }
 }

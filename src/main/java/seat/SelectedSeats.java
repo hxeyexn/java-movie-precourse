@@ -8,10 +8,10 @@ import java.util.List;
 public class SelectedSeats {
     private Screening screening;
     private List<Seat> selectedSeats = new ArrayList<>();
-
     public SelectedSeats(Screening screening) {
         this.screening = screening;
     }
+    private int price = 0;
 
     public void update(List<Seat> seats) {
         for (Seat seat: seats) {
@@ -21,6 +21,13 @@ public class SelectedSeats {
         }
         selectedSeats.clear();
         selectedSeats.addAll(seats);
+    }
+
+    public int getTotalPrice() {
+        for (Seat seat: selectedSeats) {
+            price += seat.getPrice();
+        }
+        return price;
     }
 
     public List<Seat> get() {

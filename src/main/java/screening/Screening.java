@@ -33,11 +33,11 @@ public class Screening {
     }
 
     public LocalTime getStartTime() {
-        return time.start;
+        return time.start.toLocalTime();
     }
 
     public LocalTime getEndTime() {
-        return time.end;
+        return time.end.toLocalTime();
     }
 
     public boolean overlapsWith(Screening screening) {

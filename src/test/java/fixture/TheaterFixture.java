@@ -3,7 +3,7 @@ package fixture;
 import seat.Seats;
 import theater.OperatingHours;
 import theater.Theater;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class TheaterFixture {
@@ -14,8 +14,8 @@ public class TheaterFixture {
             0L,
             "1관",
             new OperatingHours(
-                LocalTime.of(9, 0),
-                LocalTime.of(22, 0)
+                LocalDateTime.of(2025, 1, 1, 9, 0),   // 예시 날짜로 채움
+                LocalDateTime.of(2025, 1, 1, 22, 0)
             ),
             new Seats(seatFixture.getSeats())
         );
@@ -26,8 +26,8 @@ public class TheaterFixture {
             1L,
             "2관",
             new OperatingHours(
-                LocalTime.of(10, 0),
-                LocalTime.of(23, 0)
+                LocalDateTime.of(2025, 1, 1, 10, 0),
+                LocalDateTime.of(2025, 1, 1, 23, 0)
             ),
             new Seats(seatFixture.getSeats())
         );
@@ -38,8 +38,8 @@ public class TheaterFixture {
             2L,
             "3관",
             new OperatingHours(
-                LocalTime.of(10, 20),
-                LocalTime.of(23, 0)
+                LocalDateTime.of(2025, 1, 1, 10, 20),
+                LocalDateTime.of(2025, 1, 1, 23, 0)
             ),
             new Seats(seatFixture.getSeats())
         );
@@ -47,11 +47,11 @@ public class TheaterFixture {
 
     public Theater getTheater4() {
         return new Theater(
-            0L,
+            3L,
             "1관",
             new OperatingHours(
-                LocalTime.of(9, 0),
-                LocalTime.of(10, 30)
+                LocalDateTime.of(2025, 1, 1, 9, 0),
+                LocalDateTime.of(2025, 1, 1, 10, 30)
             ),
             new Seats(seatFixture.getSeats())
         );

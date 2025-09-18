@@ -2,7 +2,7 @@ package screening;
 
 import movie.Movie;
 import theater.Theater;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,13 +15,13 @@ public class Scheduling {
         List<Theater> theaters
     ) {
         for (Theater theater : theaters) {
-            LocalTime currentTime = theater.getOpenTime();
+            LocalDateTime currentTime = theater.getOpenTime();
             int index = 0;
 
             while(true) {
                 Movie movie = movies.get(index);
-                LocalTime end = currentTime.plusMinutes(movie.getScreeningTime());
-                if (end.isAfter(theater.getCloseTime())) break;
+                LocalDateTime end = currentTime.plusMinutes(movie.getScreeningTime());
+                if (end.toLocalTime().isAfter(theater.getCloseTime().toLocalTime())) break;
 
                 addScreening(theater, movie, currentTime, end);
                 currentTime = end.plusMinutes(CLEANING_TIME);
@@ -33,8 +33,8 @@ public class Scheduling {
     private void addScreening(
         Theater theater,
         Movie movie,
-        LocalTime currentTime,
-        LocalTime end
+        LocalDateTime currentTime,
+        LocalDateTime end
     ) {
         ScreeningTime time = new ScreeningTime(currentTime, end);
         Screening screening = new Screening(movie, theater, time);

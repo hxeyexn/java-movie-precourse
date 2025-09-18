@@ -1,14 +1,14 @@
 package screening;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class ScreeningTime {
-    public LocalTime start;
-    public LocalTime end;
+    public LocalDateTime start;
+    public LocalDateTime end;
 
     public ScreeningTime(
-        LocalTime start,
-        LocalTime end
+        LocalDateTime start,
+        LocalDateTime end
     ) {
         this.start = start;
         this.end = end;

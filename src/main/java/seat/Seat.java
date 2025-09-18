@@ -42,4 +42,8 @@ public class Seat {
     public int hashCode() {
         return Objects.hash(row, column, grade);
     }
+
+    public int getPrice() {
+        return grade.getPrice();
+    }
 }

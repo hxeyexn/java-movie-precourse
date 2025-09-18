@@ -2,7 +2,7 @@ package fixture;
 
 import screening.Screening;
 import screening.ScreeningTime;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ScreeningFixture {
@@ -14,8 +14,8 @@ public class ScreeningFixture {
             movieFixture.getMovie1(),
             theaterFixture.getTheater1(),
             new ScreeningTime(
-                LocalTime.of(9, 0),
-                LocalTime.of(11, 35)
+                LocalDateTime.of(2025, 1, 1, 9, 0),
+                LocalDateTime.of(2025, 1, 1, 11, 35)
             )
         );
     }
@@ -25,8 +25,8 @@ public class ScreeningFixture {
             movieFixture.getMovie2(),
             theaterFixture.getTheater2(),
             new ScreeningTime(
-                LocalTime.of(12, 0),
-                LocalTime.of(13, 43)
+                LocalDateTime.of(2025, 1, 1, 12, 0),
+                LocalDateTime.of(2025, 1, 1, 13, 43)
             )
         );
     }
@@ -36,8 +36,19 @@ public class ScreeningFixture {
             movieFixture.getMovie2(),
             theaterFixture.getTheater2(),
             new ScreeningTime(
-                LocalTime.of(10, 0),
-                LocalTime.of(12, 35)
+                LocalDateTime.of(2025, 1, 1, 10, 0),
+                LocalDateTime.of(2025, 1, 1, 12, 35)
+            )
+        );
+    }
+
+    public Screening getMovieDayScreening() {
+        return new Screening(
+            movieFixture.getMovie2(),
+            theaterFixture.getTheater2(),
+            new ScreeningTime(
+                    LocalDateTime.of(2025, 1, 10, 10, 0),
+                    LocalDateTime.of(2025, 1, 10, 12, 35)
             )
         );
     }
