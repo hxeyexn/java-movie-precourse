@@ -52,6 +52,28 @@ public class ScreeningFixture {
             )
         );
     }
+
+    public Screening getEarlyScreening() {
+        return new Screening(
+            movieFixture.getMovie2(),
+            theaterFixture.getTheater2(),
+            new ScreeningTime(
+                LocalDateTime.of(2025, 1, 1, 9, 0),
+                LocalDateTime.of(2025, 1, 1, 11, 35)
+            )
+        );
+    }
+
+    public Screening getLateScreening() {
+        return new Screening(
+            movieFixture.getMovie2(),
+            theaterFixture.getTheater2(),
+            new ScreeningTime(
+                LocalDateTime.of(2025, 1, 10, 20, 0),
+                LocalDateTime.of(2025, 1, 10, 22, 0)
+            )
+        );
+    }
     
     public List<Screening> getTwoScreenings() {
         return List.of(getScreening1(), getScreening2());
