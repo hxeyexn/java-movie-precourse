@@ -2,6 +2,8 @@ import java.time.LocalTime;
 import java.util.List;
 
 public class TheaterFixture {
+    SeatFixture seatFixture = new SeatFixture();
+
     public Theater getTheater1() {
         return new Theater(
             0L,
@@ -10,7 +12,7 @@ public class TheaterFixture {
                 LocalTime.of(9, 0),
                 LocalTime.of(22, 0)
             ),
-            new Seats()
+            new Seats(seatFixture.getSeats())
         );
     }
 
@@ -22,7 +24,7 @@ public class TheaterFixture {
                 LocalTime.of(10, 0),
                 LocalTime.of(23, 0)
             ),
-            new Seats()
+            new Seats(seatFixture.getSeats())
         );
     }
 
@@ -34,19 +36,19 @@ public class TheaterFixture {
                 LocalTime.of(10, 20),
                 LocalTime.of(23, 0)
             ),
-            new Seats()
+            new Seats(seatFixture.getSeats())
         );
     }
 
     public Theater getTheater4() {
         return new Theater(
-                0L,
-                "1관",
-                new OperatingHours(
-                    LocalTime.of(9, 0),
-                    LocalTime.of(10, 30)
-                ),
-                new Seats()
+            0L,
+            "1관",
+            new OperatingHours(
+                LocalTime.of(9, 0),
+                LocalTime.of(10, 30)
+            ),
+            new Seats(seatFixture.getSeats())
         );
     }
 
