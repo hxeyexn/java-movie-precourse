@@ -4,6 +4,8 @@ import java.util.List;
 public class SelectedMovies {
     private final List<Movie> movies = new ArrayList<>();
 
+    public SelectedMovies() {}
+
     public List<Movie> update(
         List<Movie> selectedMovies,
         int totalMovieCount
@@ -15,6 +17,7 @@ public class SelectedMovies {
             throw new IllegalArgumentException(String.format("영화 수는 %d보다 클 수 없습니다.", totalMovieCount));
         }
 
+        movies.clear();
         movies.addAll(selectedMovies);
         return movies;
     }
@@ -22,9 +25,15 @@ public class SelectedMovies {
     private boolean isValidMinimum(int selectedCount) {
         return selectedCount >= 1;
     }
-    private boolean isValidMaximum(int selectedCount, int totalCount) {
+
+    private boolean isValidMaximum(
+        int selectedCount,
+        int totalCount
+    ) {
         return selectedCount <= totalCount;
     }
 
-    public SelectedMovies() {}
+    public List<Movie> get() {
+        return movies;
+    }
 }
