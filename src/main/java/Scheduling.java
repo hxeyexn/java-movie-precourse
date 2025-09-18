@@ -16,7 +16,7 @@ public class Scheduling {
 
             while(true) {
                 Movie movie = movies.get(index);
-                LocalTime end = currentTime.plusMinutes(movie.screeningTime);
+                LocalTime end = currentTime.plusMinutes(movie.getScreeningTime());
                 if (end.isAfter(theater.getCloseTime())) break;
 
                 addScreening(theater, movie, currentTime, end);
@@ -39,5 +39,11 @@ public class Scheduling {
 
     public List<Screening> getScreenings() {
         return screenings;
+    }
+
+    public List<Screening> getScreeningsBy(String movieTitle) {
+        return screenings.stream()
+            .filter(screening -> screening.getMovie().getTitle().equals(movieTitle))
+            .toList();
     }
 }

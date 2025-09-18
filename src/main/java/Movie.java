@@ -1,10 +1,10 @@
 import java.util.Objects;
 
 public class Movie {
-    int id;
-    String title;
-    ScreeningPeriod screeningPeriod;
-    int screeningTime;
+    private int id;
+    private String title;
+    private ScreeningPeriod screeningPeriod;
+    private int screeningTime;
 
     public boolean isValidTitle(String title) {
         if (!isEquals(title)) {
@@ -44,5 +44,13 @@ public class Movie {
     @Override
     public int hashCode() {
         return Objects.hash(id, title, screeningPeriod, screeningTime);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getScreeningTime() {
+        return screeningTime;
     }
 }

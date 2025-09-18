@@ -26,7 +26,7 @@ public class SchedulingTest {
         List<Screening> screenings = scheduling.getScreenings();
         long actual =
             screenings.stream()
-                .filter(screening -> screening.getMovie().title.equals("F1 더 무비"))
+                .filter(screening -> getMovieTitle(screening).equals("F1 더 무비"))
                 .count();
         assertThat(actual).isGreaterThan(1);
     }
@@ -115,11 +115,26 @@ public class SchedulingTest {
         );
     }
 
+    @Test
+    void 특정_영화의_상영_시간을_조회할_수_있다() {
+        Movie movie1 = movieFixture.getMovie1();
+        Movie movie2 = movieFixture.getMovie2();
+        Theater theater = theaterFixture.getTheater1();
+        scheduling.schedule(List.of(movie1, movie2), List.of(theater));
+
+        List<Screening> actual = scheduling.getScreeningsBy("F1 더 무비");
+        assertThat(actual).allMatch(screening -> getMovieTitle(screening).equals("F1 더 무비"));
+    }
+
     private Screening getScreening(int index) {
         return scheduling.getScreenings().get(index);
     }
 
     private String getTheaterName(Screening screening) {
         return screening.getTheater().getName();
+    }
+
+    private String getMovieTitle(Screening screening) {
+        return screening.getMovie().getTitle();
     }
 }
