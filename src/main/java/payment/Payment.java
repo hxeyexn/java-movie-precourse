@@ -2,46 +2,22 @@ package payment;
 
 import reservation.Reservation;
 import screening.Screening;
-import user.User;
 
 import java.util.List;
 
 public class Payment {
-    private final List<DiscountPolicy> policies =
-        List.of(
-            new MovieDayDiscountPolicy(),
-            new TimeDiscountPolicy()
-        );
-    private final User user;
+    private final List<DiscountApplier> appliers;
 
-    public Payment(User user) {
-        this.user = user;
+    public Payment(List<DiscountApplier> appliers) {
+        this.appliers = appliers;
     }
 
     public void pay(
         Reservation reservation,
-        Screening screening,
-        int pointAmount
-    ) {
-        applyMovieDiscount(reservation, screening);
-        applyPoint(reservation, pointAmount);
-    }
-
-    private void applyMovieDiscount(
-        Reservation reservation,
         Screening screening
     ) {
-        for (DiscountPolicy policy : policies) {
-            policy.discount(reservation, screening);
+        for (DiscountApplier applier: appliers) {
+            applier.apply(reservation, screening);
         }
-    }
-
-    private void applyPoint(
-        Reservation reservation,
-        int pointAmount
-    ) {
-        user.usePoint(pointAmount);
-        int newPrice = reservation.getPrice() - pointAmount;
-        reservation.setPrice(newPrice);
     }
 }
