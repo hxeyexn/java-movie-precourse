@@ -12,12 +12,16 @@ public class Scheduling {
     ) {
         for (Theater theater : theaters) {
             LocalTime currentTime = theater.getOpenTime();
+            int index = 0;
 
-            for (Movie movie : movies) {
-                LocalTime end = currentTime.plusMinutes(movie.screeningTime + CLEANING_TIME);
+            while(true) {
+                Movie movie = movies.get(index);
+                LocalTime end = currentTime.plusMinutes(movie.screeningTime);
                 if (end.isAfter(theater.getCloseTime())) break;
 
                 addScreening(theater, movie, currentTime, end);
+                currentTime = end.plusMinutes(CLEANING_TIME);
+                index = (index + 1) % movies.size();
             }
         }
     }
