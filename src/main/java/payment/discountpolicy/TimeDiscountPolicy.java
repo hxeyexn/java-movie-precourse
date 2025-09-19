@@ -1,4 +1,4 @@
-package payment;
+package payment.discountpolicy;
 
 import reservation.Reservation;
 import screening.Screening;

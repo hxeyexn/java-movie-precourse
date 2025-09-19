@@ -1,8 +1,8 @@
-package payment;
+package payment.discountpolicy;
 
 import reservation.Reservation;
 import screening.Screening;
 
-interface DiscountPolicy {
+public interface DiscountPolicy {
     void discount(Reservation reservation, Screening screening);
 }

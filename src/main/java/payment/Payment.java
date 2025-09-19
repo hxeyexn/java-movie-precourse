@@ -1,5 +1,6 @@
 package payment;
 
+import payment.discountApplier.DiscountApplier;
 import reservation.Reservation;
 import screening.Screening;
 

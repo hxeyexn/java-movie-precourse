@@ -1,4 +1,4 @@
-package payment;
+package payment.discountpolicy;
 
 import fixture.ScreeningFixture;
 import org.junit.jupiter.api.BeforeEach;

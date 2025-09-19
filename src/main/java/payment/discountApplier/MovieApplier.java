@@ -1,5 +1,8 @@
-package payment;
+package payment.discountApplier;
 
+import payment.discountpolicy.DiscountPolicy;
+import payment.discountpolicy.MovieDayDiscountPolicy;
+import payment.discountpolicy.TimeDiscountPolicy;
 import reservation.Reservation;
 import screening.Screening;
 
