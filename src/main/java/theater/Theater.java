@@ -8,7 +8,7 @@ public class Theater {
     private final long id;
     private final String name;
     private final OperatingHours operatingHours;
-    private final Seats seats;
+    private Seats seats;
 
     public Theater(
         long id,
