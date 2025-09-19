@@ -1,4 +1,4 @@
-package payment.discountApplier;
+package payment.discountapplier;
 
 import payment.discountpolicy.DiscountPolicy;
 import payment.discountpolicy.MovieDayDiscountPolicy;
